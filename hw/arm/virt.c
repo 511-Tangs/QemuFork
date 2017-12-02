@@ -332,6 +332,7 @@ static void fdt_add_timer_nodes(const VirtMachineState *vms)
                        GIC_FDT_IRQ_TYPE_PPI, ARCH_TIMER_NS_EL1_IRQ, irqflags,
                        GIC_FDT_IRQ_TYPE_PPI, ARCH_TIMER_VIRT_IRQ, irqflags,
                        GIC_FDT_IRQ_TYPE_PPI, ARCH_TIMER_NS_EL2_IRQ, irqflags);
+    qemu_fdt_setprop_cells(vms->fdt, "/timer", "clock-frequency",24000000);
 }
 
 static void fdt_add_cpu_nodes(const VirtMachineState *vms)
